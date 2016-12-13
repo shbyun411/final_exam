@@ -19,5 +19,37 @@ public class Employee extends Person implements Payment{
         this.salary = salary;
     }
 
-    // need something here
+    @Override
+    public void increase() {
+        salary = 10000;
+        salary+=salary;
+    }
+
+    @Override
+    public void decrease() {
+        salary = 10000;
+        salary-=salary;
+    }
+
+    @Override
+    public void delte()
+    {
+
+    }
 }
+/*
+
+public class Array<Integer,String>{
+
+    List<String> arr_string =new ArrayList<String>(30);
+}
+public class save {
+    String s;
+    MainActivity ma = new MainActivity();
+    MainActivity2 ma2 = new MainActivity2();
+
+    public save(String s1){
+        s = s1;
+    }
+    public save(){
+*/

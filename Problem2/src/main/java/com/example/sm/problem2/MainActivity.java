@@ -1,4 +1,5 @@
 package com.example.sm.problem2;
+import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -11,12 +12,13 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     MyBaseAdapter adapter;
     ListView listview;
+    static Context context;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // need something here
+
 
         adapter = new MyBaseAdapter(this, emp_list);
         listview = (ListView) findViewById(R.id.listView1) ;
@@ -33,23 +35,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         switch (v.getId()){
             case R.id.btn_inc:
-                // need something here
+                edit_salary.setText("");
+
                 break;
 
             case R.id.btn_dec:
-                // need something here
+                edit_salary.setText("");
                 break;
 
             case R.id.btn_store:
                 // need something here
+                    edit_age.getText();
+                    edit_name.getText();
+
                 break;
 
             case R.id.btn_modify:
                 // need something here
+
                 break;
 
             case R.id.btn_delete:
-                // need something here
+                listview.
                 break;
         }
     }
@@ -58,4 +65,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 interface Payment {
     void increase();
     void decrease();
+    void delte();
 }
+
