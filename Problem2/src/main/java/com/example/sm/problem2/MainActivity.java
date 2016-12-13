@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         // need something here
+        ArrayList emp_list = new ArrayList();
 
         adapter = new MyBaseAdapter(this, emp_list);
         listview = (ListView) findViewById(R.id.listView1) ;
@@ -34,14 +35,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (v.getId()){
             case R.id.btn_inc:
                 // need something here
+                employee = new Employee(edit_name.getText().toString(),Integer.parseInt(edit_age.getText().toString()),Integer.parseInt(edit_salary.getText().toString()));
+                employee.increase();
                 break;
 
             case R.id.btn_dec:
                 // need something here
+                employee = new Employee(edit_name.getText().toString(),Integer.parseInt(edit_age.getText().toString()),Integer.parseInt(edit_salary.getText().toString()));
+                employee.decrease();
                 break;
 
             case R.id.btn_store:
                 // need something here
+                employee = new Employee(edit_name.getText().toString(),Integer.parseInt(edit_age.getText().toString()),Integer.parseInt(edit_salary.getText().toString()));
+                adapter.add(employee);
                 break;
 
             case R.id.btn_modify:

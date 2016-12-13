@@ -22,17 +22,20 @@ public class MainActivity extends AppCompatActivity /* implements Something1, So
         final TextView text_selectedType = (TextView) findViewById(R.id.text_selectedType);
         final EditText edit_phoneNumber = (EditText) findViewById(R.id.edit_phoneNumber);
 
+        final GetLocation getLocation = new GetLocation();
+
         btn_getLocation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                text_selectedType.setText("LOCATION");
+                text_selectedData.setText(Double.toString(getLocation.getLatitude()) + "\n" + Double.toString(getLocation.getLongitude()));
             }
         });
 
         btn_getSensors.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                text_selectedType.setText("SENSORS");
             }
         });
 

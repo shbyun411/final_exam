@@ -31,7 +31,9 @@ public class MainActivity extends AppCompatActivity {
 
             try {
                 // need something here
-            } catch (InterruptedException e) { }
+
+            } catch (Exception e) {
+            }
         }
 
         manager.sort();
@@ -39,8 +41,6 @@ public class MainActivity extends AppCompatActivity {
         MyBaseAdapter adapter = new MyBaseAdapter(this, manager.list);
         ListView listview = (ListView) findViewById(R.id.listView1) ;
         listview.setAdapter(adapter);
-
-
     }
 }
 
@@ -71,6 +71,9 @@ class Customer extends Person{
     }
 
     // need something here
+    void work(){
+
+    }
 }
 
 
@@ -84,7 +87,6 @@ class Manager extends Person{
     void sort(){ // 직접 소팅 알고리즘을 이용하여 코딩해야함. 자바 기본 정렬 메소드 이용시 감
 
         // need something here
-
     }
 
     @Override
