@@ -11,10 +11,12 @@
         <activity android:name="com.example.igx.problem1.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+                android.permission.ACCESS_COARSE_LOCATION
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            android.permission.ACCESS_COARSE_LOCATION
         </activity>
+        android.permission.ACCESS_COARSE_LOCATION
     </application>
-
 </manifest>
