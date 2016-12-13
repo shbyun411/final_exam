@@ -32,8 +32,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Employee employee;
 
         switch (v.getId()){
+
             case R.id.btn_inc:
                 // need something here
+
                 break;
 
             case R.id.btn_dec:
@@ -57,5 +59,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 interface Payment {
     void increase();
+
+
     void decrease();
 }

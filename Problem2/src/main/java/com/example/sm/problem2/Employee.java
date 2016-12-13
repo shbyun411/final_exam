@@ -15,9 +15,12 @@ public class Employee extends Person implements Payment{
         return salary;
     }
 
-    public void setSalary(int salary) {
-        this.salary = salary;
+    public void setSalary(int salary) { this.salary = salary;
     }
 
-    // need something here
+
+
+
+
+// need something here
 }

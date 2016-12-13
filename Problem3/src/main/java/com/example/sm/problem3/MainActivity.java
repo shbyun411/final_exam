@@ -2,10 +2,13 @@ package com.example.sm.problem3;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.HorizontalScrollView;
 import android.widget.ListView;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.IllformedLocaleException;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -81,7 +84,9 @@ class Manager extends Person{
         list.add(customer);
     }
 
-    void sort(){ // 직접 소팅 알고리즘을 이용하여 코딩해야함. 자바 기본 정렬 메소드 이용시 감
+    void sort(){
+
+        // 직접 소팅 알고리즘을 이용하여 코딩해야함. 자바 기본 정렬 메소드 이용시 감
 
         // need something here
 
