@@ -6,9 +6,13 @@ import android.widget.ListView;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Arrays;
+import java.util.Random;
 
 
 public class MainActivity extends AppCompatActivity {
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,11 +34,18 @@ public class MainActivity extends AppCompatActivity {
         for(CustomerThread ct : list){
 
             try {
+                public void run() {
+
+
+                }
                 // need something here
-            } catch (InterruptedException e) { }
+            } catch (InterruptedException e) {
+                e.getMessage();
+            }
         }
 
-        manager.sort();
+        Arrays.sort(list);
+
 
         MyBaseAdapter adapter = new MyBaseAdapter(this, manager.list);
         ListView listview = (ListView) findViewById(R.id.listView1) ;
@@ -58,7 +69,7 @@ abstract class Person{
 
     static int money = 100000;
     int spent_money = 0;
-    abstract void work();
+       abstract void work();
 
 }
 
@@ -81,15 +92,20 @@ class Manager extends Person{
         list.add(customer);
     }
 
-    void sort(){ // 직접 소팅 알고리즘을 이용하여 코딩해야함. 자바 기본 정렬 메소드 이용시 감
+    /*void sort(){ // 직접 소팅 알고리즘을 이용하여 코딩해야함. 자바 기본 정렬 메소드 이용시 감
 
         // need something here
 
-    }
+    }*/
 
     @Override
     void work() {
-        sort();
+        Random ran = new Random();
+        int ranNum = ran.nextInt(1000);
+        for (int i = 0; i < 10; i++) {
+            spent_money = ranNum;
+            money = money - spent_money;
+        }
     }
 }
 

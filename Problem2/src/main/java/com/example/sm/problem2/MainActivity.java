@@ -7,6 +7,8 @@ import android.widget.EditText;
 import android.widget.ListView;
 import java.util.ArrayList;
 
+import static android.R.id.list;
+
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     MyBaseAdapter adapter;
@@ -16,7 +18,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // need something here
+        ArrayList<String> list = new ArrayList(); // need something here
 
         adapter = new MyBaseAdapter(this, emp_list);
         listview = (ListView) findViewById(R.id.listView1) ;
