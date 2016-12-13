@@ -18,6 +18,12 @@ public class Employee extends Person implements Payment{
     public void setSalary(int salary) {
         this.salary = salary;
     }
+    @Override
+    public void increase(){
 
-    // need something here
+    }
+    @Override
+    public void decrease(){
+
+    }
 }
