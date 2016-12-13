@@ -2,16 +2,16 @@ package com.example.sm.problem2;
 
 
 //public class Employee /* extends something1 implements something2 */ {
-public class Employee extends Person implements Payment{
+public class Employee extends Person{
 
     private int salary;
 
     public Employee(String name, int age, int salary) {
-        super(name, age);
+        super(name, age, salary);
         this.salary = salary;
     }
 
-    public int getSalary() {
+    public int getSalary(int i) {
         return salary;
     }
 
@@ -19,5 +19,5 @@ public class Employee extends Person implements Payment{
         this.salary = salary;
     }
 
-    // need something here
+    //
 }
