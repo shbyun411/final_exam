@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         // need something here
 
-        adapter = new MyBaseAdapter(this, emp_list);
+        adapter = new MyBaseAdapter(this,emp_list);
         listview = (ListView) findViewById(R.id.listView1) ;
         listview.setAdapter(adapter);
         listview.setOnItemClickListener((AdapterView.OnItemClickListener)adapter);
@@ -33,14 +33,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         switch (v.getId()){
             case R.id.btn_inc:
+                //int edit_salary1=Integer.parseInt(String.valueOf(edit_salary.getText()))+10000;
+                String edit_si = edit_salary.getText().toString()+10000;
+                edit_salary.setText(edit_si);
                 // need something here
                 break;
 
             case R.id.btn_dec:
+                String edit_sd = edit_salary.getText().toString()+(-10000);
+                edit_salary.setText(edit_sd);
                 // need something here
                 break;
 
             case R.id.btn_store:
+
                 // need something here
                 break;
 
