@@ -7,19 +7,28 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
-import java.util.ArrayList;
 
+import org.xmlpull.v1.XmlPullParser;
+
+import java.util.ArrayList;
+import java.util.zip.Inflater;
+//final exam
 public class MyBaseAdapter extends BaseAdapter implements AdapterView.OnItemClickListener{
 
     Context mContext = null;
     ArrayList<Employee> mData = null;
     LayoutInflater mLayoutInflater = null;
     public int selected_position;
+    int layout;
 
-    MyBaseAdapter(  Context context, ArrayList<Employee> data){
+
+
+    MyBaseAdapter(  Context context, int alayout, ArrayList<Employee> data){
         mContext = context;
         mData = data;
+        layout = alayout;
         mLayoutInflater = LayoutInflater.from(mContext);
     }
 
@@ -59,13 +68,24 @@ public class MyBaseAdapter extends BaseAdapter implements AdapterView.OnItemClic
         notifyDataSetChanged();
     }
 
-    public void delete(int index){
-        mData.remove(index);
+    public void delete(Employee employee){
+        mData.remove(employee);
         notifyDataSetChanged();
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        // need something here
+        if(convertView ==null){
+            convertView =mLayoutInflater.inflate(layout,parent,false);
+        }
+        TextView employeeName = (TextView) convertView.findViewById(R.id.text_employeeName);
+        employeeName.setText(mData.get(position).getName());
+
+        TextView employeeAge = (TextView) convertView.findViewById(R.id.text_employeeAge);
+        employeeAge.setText(mData.get(position).getAge());
+
+        TextView employeeSalary = (TextView) convertView.findViewById(R.id.text_employeeSalary);
+        employeeSalary.setText(mData.get(position).getSalary());
+        return convertView;
     }
 }
