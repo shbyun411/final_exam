@@ -18,7 +18,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         // need something here
 
-        adapter = new MyBaseAdapter(this, emp_list);
+        ArrayList<Employee> emp_list = new ArrayList<Employee>();
+        adapter = new MyBaseAdapter(this, R.layout.list_view_item_layout,emp_list);
         listview = (ListView) findViewById(R.id.listView1) ;
         listview.setAdapter(adapter);
         listview.setOnItemClickListener((AdapterView.OnItemClickListener)adapter);
@@ -29,26 +30,35 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         EditText edit_age = (EditText) findViewById(R.id.edit_age);
         EditText edit_salary = (EditText) findViewById(R.id.edit_salary);
 
-        Employee employee;
+        String name = edit_name.getText().toString();
+        String Age = edit_age.getText().toString();
+        int age = Integer.parseInt(Age);
+        String Salary = edit_salary.getText().toString();
+        int salary = Integer.parseInt(Salary);
+
+
+        Employee employee= new Employee(name,age,salary);
 
         switch (v.getId()){
             case R.id.btn_inc:
-                // need something here
+                employee.increase();
                 break;
 
             case R.id.btn_dec:
-                // need something here
+                employee.decrease();
                 break;
 
             case R.id.btn_store:
+                adapter.add(employee);
                 // need something here
                 break;
 
             case R.id.btn_modify:
-                // need something here
+
                 break;
 
             case R.id.btn_delete:
+                adapter.delete(employee);
                 // need something here
                 break;
         }
