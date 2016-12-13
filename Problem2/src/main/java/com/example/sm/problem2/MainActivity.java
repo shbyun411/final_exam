@@ -34,22 +34,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (v.getId()){
             case R.id.btn_inc:
                 // need something here
+                employee.increase();
                 break;
 
             case R.id.btn_dec:
                 // need something here
+                employee.decrease();
                 break;
 
             case R.id.btn_store:
                 // need something here
+                adapter.mData.add(employee);
                 break;
 
             case R.id.btn_modify:
                 // need something here
+                adapter.mData.remove(employee);
+                adapter.mData.add(employee);
                 break;
 
             case R.id.btn_delete:
                 // need something here
+                adapter.mData.remove(employee);
                 break;
         }
     }
