@@ -69,8 +69,10 @@ class Customer extends Person{
     Customer(String name){
         this.name = name;
     }
+    @Override
+    void work(){
 
-    // need something here
+    }
 }
 
 
