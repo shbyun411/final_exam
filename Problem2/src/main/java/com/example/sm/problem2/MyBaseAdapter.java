@@ -1,11 +1,13 @@
 package com.example.sm.problem2;
 
 import android.content.Context;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import java.util.ArrayList;
@@ -66,6 +68,21 @@ public class MyBaseAdapter extends BaseAdapter implements AdapterView.OnItemClic
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        // need something here
-    }
-}
+        position=0;
+
+
+        }
+
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        setContentView(R.layout.activity_main);
+
+        final Button btn_sendMessage = (Button) findViewById(R.id.btn_sendMessage);
+        final TextView text_selectedData = (TextView) findViewById(R.id.text_selectedData);
+        final TextView text_selectedType = (TextView) findViewById(R.id.text_selectedType);
+        final EditText edit_phoneNumber = (EditText) findViewById(R.id.edit_phoneNumber);
+
+    public void onClick(View v) {
+
+            }
