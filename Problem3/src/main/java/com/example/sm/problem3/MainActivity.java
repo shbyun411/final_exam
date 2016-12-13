@@ -3,6 +3,8 @@ package com.example.sm.problem3;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ListView;
+
+import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -20,17 +22,19 @@ public class MainActivity extends AppCompatActivity {
 
         for(int i = 0 ; i < 10 ; i++){
             Customer customer = new Customer("Customer" + i);
-            CustomerThread ct = new CustomerThread(customer);
-            list.add(ct);
+            CustomerThread thread = new CustomerThread(customer);
+            list.add(thread);
             manager.add_customer(customer);
-            ct.start();
+            thread.start();
         }
 
 
-        for(CustomerThread ct : list){
+        for(CustomerThread thread : list){
 
             try {
-                // need something here
+                //
+
+
             } catch (InterruptedException e) { }
         }
 

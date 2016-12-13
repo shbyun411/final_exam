@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         // need something here
 
-        adapter = new MyBaseAdapter(this, emp_list);
+        adapter = new MyBaseAdapter(this, null);
         listview = (ListView) findViewById(R.id.listView1) ;
         listview.setAdapter(adapter);
         listview.setOnItemClickListener((AdapterView.OnItemClickListener)adapter);
@@ -29,30 +29,31 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         EditText edit_age = (EditText) findViewById(R.id.edit_age);
         EditText edit_salary = (EditText) findViewById(R.id.edit_salary);
 
-        Employee employee;
+        Employee employee = null;
 
         switch (v.getId()){
             case R.id.btn_inc:
-                // need something here
+                employee.getSalary(10000);
                 break;
 
             case R.id.btn_dec:
-                // need something here
+                employee.getSalary(-10000);
                 break;
 
             case R.id.btn_store:
-                // need something here
+                adapter.add(employee);
                 break;
 
             case R.id.btn_modify:
-                // need something here
+
                 break;
 
             case R.id.btn_delete:
-                // need something here
+                adapter.delete(0);
                 break;
         }
     }
+
 }
 
 interface Payment {
