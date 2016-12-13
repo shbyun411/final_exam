@@ -6,6 +6,7 @@ public class Employee extends Person implements Payment{
 
     private int salary;
 
+
     public Employee(String name, int age, int salary) {
         super(name, age);
         this.salary = salary;
@@ -19,5 +20,10 @@ public class Employee extends Person implements Payment{
         this.salary = salary;
     }
 
-    // need something here
+    public void increse(int salary){
+        this.salary += 10000;
+    }
+    public void dercrese(int salary){
+        this.salary -= 10000;
+    }
 }
